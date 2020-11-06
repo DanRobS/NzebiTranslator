@@ -16,6 +16,20 @@
   margin-right: 50px;
 }
 
+  .Navbar {
+    margin-left: 250px;
+    margin-right: 250px;
+    font-size: 25px;
+  }
+
+    .Navbar-Brand {
+
+    }
+
+    .mr-auto {
+
+    }
+
   .Heading {
     flex: 1;
     display: flex;

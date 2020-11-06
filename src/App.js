@@ -3,7 +3,7 @@ import InputGroup from 'react-bootstrap/InputGroup'
 import FormControl from 'react-bootstrap/FormControl'
 import './App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import { Navbar, Nav, Button } from 'react-bootstrap'
+import { Navbar, Nav, Button, NavDropdown } from 'react-bootstrap'
 
 class App extends React.Component {
 
@@ -12,11 +12,6 @@ class App extends React.Component {
     this.state = {
 
     }
-
-  }
-
-  copyAndPaste = () => {
-
   }
 
   render() {
@@ -24,6 +19,17 @@ class App extends React.Component {
       <div className="App">
         <div className="App-main-div">
 
+        <Navbar bg="dark" variant="dark" className="Navbar">
+          <Navbar.Brand className="Navbar-Brand"
+              href="#home">Online language translator</Navbar.Brand>
+          <Nav className="mr-auto">
+            <Nav.Link className="homeLink" href="#home">Home</Nav.Link>
+            <NavDropdown title="Dictionaries" id="basic-nav-dropdown">
+              <NavDropdown.Item href="#Nzebi">Nzebi</NavDropdown.Item>
+              <NavDropdown.Item href="#Fang">Fang</NavDropdown.Item>
+            </NavDropdown>
+          </Nav>
+        </Navbar>
           {/*H E A D E R*/}
           <div className="Heading">
             {/*Heading Title*/}
@@ -41,7 +47,6 @@ class App extends React.Component {
           <div className="Body">
             <div className="TextInput-Section">
               <textarea
-                value={this.state.value}
                 className="TextArea"
                 placeholder="Enter text"
                 rows="10"
@@ -53,10 +58,8 @@ class App extends React.Component {
                   <option value="Fang">Fang</option>
                 </select>
                 <button
-                  onClick={this.copyAndPaste}
                   className="SubmitButton"
-                  type="submit"
-                  >
+                  type="submit">
                   Submit
                 </button>
               </div>
@@ -65,18 +68,13 @@ class App extends React.Component {
             <div className="Answer">
 
               <div className="TranslatedText-div">
-              <p
-                className="TranslatedText"
-              >
-              Ipsum
+              <p className="TranslatedText">
+
               </p>
               </div>
-
             </div>
           </div>
-
         </div>
-
       </div>
     );
   }
